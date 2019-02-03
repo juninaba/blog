@@ -1,0 +1,16 @@
+<div class="contents">
+  <% if @user.avatar .attached? %>
+  <br>
+    <%= image_tag @user.avatar, :size => '200x200', class: 'maru'%>
+  </br>
+  <% end %>
+  <p><%= @user.nickname %>さんの投稿一覧  <a href="/users/edit">編集</a></p>
+  <%= render 'follow_form' %>
+  <%= render 'stats' %>
+  <% @articles.each do |article| %>
+    <%= render partial: "articles/article", locals: {article: article} %>
+  <% end %>
+  <div>
+  <%= paginate(@articles) %>
+  </div>
+</div>

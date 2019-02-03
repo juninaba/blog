@@ -1,0 +1,51 @@
+.brand-logo {
+  margin-left: 50px;
+}
+
+.hide-on-med-and-down {
+  margin-right: 50px;
+}
+
+.col {
+  margin: 50px;
+}
+
+.contents {
+  margin: 0 100px;
+}
+
+
+.pagination {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.card-content_title {
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 20px;
+  display: block;
+  color: inherit;
+  padding-top: 20px;
+}
+
+  .maru {
+    border-radius: 100px;
+  }
+
+.comments h4 {
+  font-size: 20px;
+}
+
+.users {
+  text-align: center;
+  font-size: 20px;
+}
+
+.users_name {
+  margin-top: 50px;
+}
+
+.table {
+  margin: 0 auto;
+}

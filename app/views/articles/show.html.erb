@@ -1,0 +1,35 @@
+<div class="contents">
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-content">
+      <div class="card-content_title"><%= @article.title %></div>
+      <p><%= @article.text %></p>
+    </div>
+    <div class="card-action">
+      <% if @article.user_id == current_user.id %>
+        <%= link_to '編集', "/articles/#{@article.id}/edit", method: :get, class: 'btn' %>
+        <%= link_to '削除', "/articles/#{@article.id}", method: :delete, class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+<div class="contents">
+  <% if current_user %>
+    <%= form_tag("/articles/#{@article.id}/comments", method: :post, id: "new_comment" ) do %>
+        <textarea name="text" cols="30" rows="2" placeholder="コメントする" class="textbox"></textarea>
+        <input type="submit" value="SENT" class="btn">
+    <% end %>
+  <% end %>
+  <div class="comments">
+    <h4>＜コメント一覧＞</h4>
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

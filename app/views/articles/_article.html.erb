@@ -1,0 +1,15 @@
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-content">
+      <div class="card-content_title"><%= article.title %></div>
+      <p><%= article.text %></p>
+    </div>
+    <div class="card-action">
+      <%= link_to '詳細', "/articles/#{article.id}", method: :get, class: 'btn' %>
+      <% if user_signed_in? && article.user_id == current_user.id %>
+        <%= link_to '編集', "/articles/#{article.id}/edit", method: :get, class: 'btn' %>
+        <%= link_to '削除', "/articles/#{article.id}", method: :delete, class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
