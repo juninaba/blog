@@ -1,8 +1,13 @@
+<!-- フォロー/フォロー解除ボタン用のパーシャル -->
+<!-- 現在のユーザーにはフォロー/フォロー解除ボタンは出ない -->
 <% unless current_user?(@user) %>
   <div id="follow_form">
+  <!-- 現在のユーザーがフォローしているかどうか -->
   <% if current_user.following?(@user) %>
+    <!-- unfollowのパーシャル -->
     <%= render 'unfollow' %>
   <% else %>
+    <!-- followのパーシャル -->
     <%= render 'follow' %>
   <% end %>
   </div>

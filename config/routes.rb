@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+    #ユーザーidが含まれているURLを扱う
     member do
      get :following, :followers
     end
