@@ -6,7 +6,7 @@
       <p><%= @article.text %></p>
     </div>
     <div class="card-action">
-      <% if @article.user_id == current_user.id %>
+      <% if user_signed_in? && @article.user_id == current_user.id %>
         <%= link_to '編集', "/articles/#{@article.id}/edit", method: :get, class: 'btn' %>
         <%= link_to '削除', "/articles/#{@article.id}", method: :delete, class: 'btn' %>
       <% end %>
